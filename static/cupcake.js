@@ -1,5 +1,11 @@
-const cupcake_to_delete = document.querySelector(".delete-cupcake")
-cupcake_to_delete.addEventListener("click", function () {
-  const id = cupcake_to_delete.dataset.id
-  alert('I\'m clicked')
-})
+"use strict";
+const cupcake_to_delete = document.querySelectorAll(".delete-cupcake")
+
+cupcake_to_delete.forEach{
+  (cupcake) => {
+    cupcake.addEventListener("click", function () {
+      const id = cupcake.dataset.id
+      alert(`I\'m clicked with ${id}`)
+    })
+  }
+}
