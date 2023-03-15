@@ -1,11 +1,9 @@
 "use strict";
-const cupcake_to_delete = document.querySelectorAll(".delete-cupcake")
+const cupcakeClass = document.querySelector('.list-group')
 
-cupcake_to_delete.forEach{
-  (cupcake) => {
-    cupcake.addEventListener("click", function () {
-      const id = cupcake.dataset.id
-      alert(`I\'m clicked with ${id}`)
-    })
-  }
-}
+cupcakeClass.addEventListener("click", async function (event) {
+  event.preventDefault();
+  const id = event.target.dataset.id
+  await axios.delete(`/api/cupcakes/${id}`)
+  this.parentNode.remove()
+})
